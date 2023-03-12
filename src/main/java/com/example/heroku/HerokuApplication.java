@@ -74,6 +74,32 @@ public class HerokuApplication {
     }
   }
 
+  private String getRandomString() {
+    // a list of characters to choose from in form of a string
+
+ String AlphaNumericStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz";
+
+ // creating a StringBuffer size of AlphaNumericStr
+
+ StringBuilder s = new StringBuilder(10);
+
+ int i;
+
+ for ( i=0; i<10; i++) {
+
+   //generating a random number using math.random()
+
+   int ch = (int)(AlphaNumericStr.length() * Math.random());
+
+   //adding Random character one by one at the end of s
+
+   s.append(AlphaNumericStr.charAt(ch));
+
+  }
+
+    return s.toString();
+  }
+
   @Bean
   public DataSource dataSource() throws SQLException {
     if (dbUrl == null || dbUrl.isEmpty()) {
