@@ -66,7 +66,7 @@ public class HerokuApplication {
         output.add("Read from DB: " + rs.getTimestamp("tick") + " " + rs.getString("random_string"));
       }
 
-      System.out.println("Drew Marshall");
+      System.out.println("Print statement inside the HerokuApplication.db() method. Drew Marshall");
 
       model.put("records", output);
       return "db";
